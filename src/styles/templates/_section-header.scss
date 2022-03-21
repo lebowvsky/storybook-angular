@@ -1,0 +1,34 @@
+/* ----------------------------- */
+/* ----------------------------- */
+/* ----   Section Header   ----- */
+/* ----------------------------- */
+/* ----------------------------- */
+
+@use '../theming' as t;
+@use '../variables' as v;
+@use '../mixins' as m;
+
+.section-header {
+	display: flex;
+
+	.sh-slash {
+		width: 20px;
+		transform: skewX(-10deg);
+		background-color: t.color(accent, 500);
+		border-radius: 3px;
+		margin: 0 20px 0 10px;
+	}
+	.sh-title-wrapper {
+		max-width: 450px;
+		.shtw-title {
+			margin: 0;
+			font-family: v.$secondary-font;
+			font-size: v.$h1-font-size;
+			@include m.title-secondary-font-sizes;
+		}
+
+		.shtw-subtitle {
+			margin: 0;
+		}
+	}
+}

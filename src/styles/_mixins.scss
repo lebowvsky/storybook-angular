@@ -1,0 +1,80 @@
+@use 'variables';
+
+@mixin resetList {
+	padding: 0;
+	margin: 0;
+	> li {
+		list-style-type: none;
+	}
+}
+
+@mixin resetBtn {
+	border: none;
+	padding: 5px 10px;
+
+	i {
+		vertical-align: middle;
+	}
+}
+
+@mixin addShadow($level) {
+	box-shadow: map-get(variables.$shadows-levels, 1);
+}
+
+@mixin bpFactory($min: -1, $max: -1) {
+	@if $min == -1 {
+		@media only screen and (max-width: $max) {
+			@content;
+		}
+	} @else if $max == -1 {
+		@media only screen and (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@media only screen and (min-width: $min) and (max-width: $max) {
+			@content;
+		}
+	}
+}
+
+@mixin title-secondary-font-sizes {
+	font-size: variables.$title-secondary-font-size;
+
+	@include bpFactory($max: variables.$l) {
+		font-size: variables.$title-secondary-font-size-l;
+	}
+	@include bpFactory($max: variables.$m) {
+		font-size: variables.$title-secondary-font-size-m;
+	}
+	@include bpFactory($max: variables.$s) {
+		font-size: variables.$title-secondary-font-size-s;
+	}
+}
+
+@mixin quotes-width-height-responsive {
+	width: variables.$quote-size;
+	height: variables.$quote-size;
+
+	@include bpFactory($max: variables.$l) {
+		width: variables.$quote-size-l;
+		height: variables.$quote-size-l;
+	}
+	@include bpFactory($max: variables.$m) {
+		width: variables.$quote-size-m;
+		height: variables.$quote-size-m;
+	}
+}
+
+@mixin title-hero-secondary {
+	font-family: variables.$secondary-font;
+	font-size: variables.$h1-hero-secondary-font-size;
+	margin: 0 0 25px 0;
+	font-weight: 400;
+
+	@include bpFactory($max: variables.$l) {
+		font-size: variables.$h1-hero-secondary-font-size-l;
+	}
+	@include bpFactory($max: variables.$m) {
+		font-size: variables.$h1-hero-secondary-font-size-m;
+	}
+}

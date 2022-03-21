@@ -1,0 +1,17 @@
+/* ----------------------------- */
+/* ----------------------------- */
+/* ----      Input Text    ----- */
+/* ----------------------------- */
+/* ----------------------------- */
+
+@use '../theming' as t;
+@use '../variables' as v;
+@use '../mixins' as m;
+
+.custom-input {
+	padding: 9px 15px;
+	border: 1px solid t.color(neutral, 400);
+	background-color: white;
+	border-radius: 5px;
+	color: t.color(neutral, 500);
+}

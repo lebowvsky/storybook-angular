@@ -1,0 +1,108 @@
+/* ----------------------------- */
+/* ----------------------------- */
+/* ------  CUSTOM BUTTON   ----- */
+/* ----------------------------- */
+/* ----------------------------- */
+
+@use '../../../styles/theming' as t;
+@use '../../../styles/variables.scss' as v;
+@use '../../../styles/mixins' as m;
+
+$colors: hydrogen, carbon, oxygen, nitrogen, neutral;
+$levels: primary, secondary, ghost;
+$sizes: small, large, medium;
+
+.custom-button {
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  transition: background-color 150ms ease-in-out, color 150ms ease-in-out;
+  font-family: v.$secondary-font;
+
+  @each $size in $sizes {
+    &.size-#{$size} {
+      @if $size == "small" {
+        font-size: 16px;
+      } @else if $size == "large" {
+        font-size: 22px;
+      } @else {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @each $color in $colors {
+    &.btn-#{$color} {
+      &:focus {
+        border: 1px solid #0c48e2;
+      }
+
+      @each $level in $levels {
+        @if $level == "secondary" {
+          &.level-#{$level} {
+            background-color: t.color($color, 300);
+            color: t.color($color, 600);
+
+            &:hover {
+              background-color: t.color($color, 500);
+              color: t.color($color, 0);
+            }
+
+            &:disabled {
+              background-color: t.color($color, 100);
+              color: t.color($color, 300);
+            }
+          }
+        } @else if $level == "ghost" {
+          &.level-#{$level} {
+            background-color: transparent;
+            color: t.color($color, 600);
+
+            &:hover {
+              background-color: t.color($color, 300);
+              color: t.color($color, 600);
+            }
+
+            &:disabled {
+              background-color: transparent;
+              color: t.color($color, 300);
+            }
+          }
+        } @else {
+          &.level-#{$level} {
+            background-color: t.color($color, 500);
+            color: t.color($color, 0);
+
+            &:hover {
+              background-color: t.color($color, 900);
+              color: t.color(neutral, 0);
+
+              @if $color == "secondary" {
+                background-color: #032830;
+              }
+            }
+
+            &:disabled {
+              background-color: t.color($color, 200);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .eva {
+    margin: 0 10px 0 0;
+
+    &.cb-icon-before {
+      margin: 0 10px 0 0;
+    }
+
+    &.cb-icon-after {
+      margin: 0 0 0 10px;
+    }
+  }
+}

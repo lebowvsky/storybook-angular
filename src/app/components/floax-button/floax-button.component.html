@@ -1,0 +1,12 @@
+<button
+  class="custom-button btn-{{ colorButton }} level-{{ levelButton }} size-{{
+    sizeButton
+  }}"
+  (click)="onClick()"
+  [type]="type"
+  [disabled]="isDisabled"
+>
+  <i *ngIf="iconBefore" class="cb-icon-before eva eva-{{ iconBefore }}"></i>
+  <ng-content></ng-content>
+  <i *ngIf="iconAfter" class="cb-icon-after eva eva-{{ iconAfter }}"></i>
+</button>

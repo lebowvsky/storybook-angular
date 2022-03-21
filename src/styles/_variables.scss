@@ -1,0 +1,67 @@
+@use '../styles/theming' as t;
+
+// Navbar
+$header-height: 100px;
+$header-height-m: 70px;
+
+$content-max-width: 1440px;
+
+// Margins
+$component-margin-X-mobile: 15px;
+
+$component-margin-bottom: 150px;
+$component-margin-bottom-l: 120px;
+$component-margin-bottom-m: 75px;
+$component-margin-bottom-s: 75px;
+
+// Paddings
+$general-padding-mobile: 15px;
+
+// Content Header
+
+// Colors
+
+// Fonts variables
+$primary-font: 'Roboto', sans-serif !default;
+$secondary-font: 'Bebas Neue', 'Sans Serif';
+
+$font-size: 16px;
+$font-size-l: 0.9rem;
+$font-size-m: 0.9rem;
+
+$h1-font-size: 70px;
+$h1-font-size-l: 60px;
+$h1-font-size-m: 40px;
+$h1-font-size-s: 20px;
+
+$h1-hero-secondary-font-size: 80px;
+$h1-hero-secondary-font-size-l: 60px;
+$h1-hero-secondary-font-size-m: 40px;
+// $h1-hero-secondary-font-size-s: 20px;
+
+$title-secondary-font-size: 40px;
+$title-secondary-font-size-l: 35px;
+$title-secondary-font-size-m: 25px;
+$title-secondary-font-size-s: 20px;
+
+$font-size-nav-item: 19px;
+$font-size-nav-item-l: 1rem;
+$font-size-nav-item-m: 0.9rem;
+$font-size-nav-item-s: 0.8rem;
+
+// SVG Quotes sizes
+$quote-size: 85px;
+$quote-size-l: 75px;
+$quote-size-m: 60px;
+
+// Breakpoints
+$xs: 400px;
+$s: 760px;
+$m: 980px;
+$l: 1200px;
+$xl: 1440px;
+
+// Transitions
+$speed: 250ms;
+$normal-speed: 350ms;
+$slow: 650ms;
